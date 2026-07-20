@@ -14,9 +14,10 @@ const apps = [
     icon: Activity,
     gradient: "from-[hsl(178,58%,42%)] to-[hsl(180,60%,45%)]",
     bgGlow: "hsl(178 58% 42% / 0.08)",
-    route: "/auth",
+    route: "https://chirayuapp.com/auth",
     cta: "Open App",
     platform: "Web App",
+    external: true,
   },
   {
     id: "pulsecheck",
