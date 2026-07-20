@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "sdk_version": "0.23.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://jxsgahftvwhlhvcovoxi.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "chirayu-ai-mcp",
+      "version": "0.1.0",
+      "title": "Chirayu AI"
+    },
+    "tools": [
+      {
+        "name": "list_reports",
+        "title": "List health reports",
+        "description": "List the signed-in user's uploaded health reports (blood work / lab reports), most recent first.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20,
+              "description": "Max reports to return."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_markers",
+        "title": "List extracted health markers",
+        "description": "List biomarkers extracted from the signed-in user's reports. Optionally filter by marker name (case-insensitive substring) or report id.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "marker_name": {
+              "type": "string",
+              "description": "Optional case-insensitive substring to match marker name (e.g. 'vitamin d', 'ldl')."
+            },
+            "report_id": {
+              "type": "string",
+              "format": "uuid",
+              "description": "Optional report id to restrict results to a single report."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 100
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_latest_insights",
+        "title": "Get latest health insights",
+        "description": "Get the signed-in user's most recent Chirayu AI health insight analysis (summary, markers, recommendations, and 3-month plan).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_profile",
+        "title": "Get user profile and questionnaire",
+        "description": "Get the signed-in user's profile and most recent lifestyle/health questionnaire responses.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
