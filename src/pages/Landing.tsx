@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Activity, Heart, ArrowRight, Sparkles, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -200,12 +200,12 @@ const Landing = () => {
         <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} WhiteLight Ventures LLP. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="/pulsecheck/privacy" className="transition-colors hover:text-foreground">
+            <Link to="/pulsecheck/privacy" className="transition-colors hover:text-foreground">
               Privacy
-            </a>
-            <a href="/pulsecheck/terms" className="transition-colors hover:text-foreground">
+            </Link>
+            <Link to="/pulsecheck/terms" className="transition-colors hover:text-foreground">
               Terms
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
