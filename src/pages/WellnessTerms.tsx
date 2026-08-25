@@ -92,7 +92,7 @@ const WellnessTerms = ({ appName, slug }: Props) => {
         <meta property="og:title" content={`${appName} Terms of Use`} />
         <meta
           property="og:description"
-          content={`Terms for using ${appName} — general wellness guidance only, not professional advice. Subscriptions managed via Google Play.`}
+          content={`Terms for using ${appName} — general wellness guidance only, not professional advice. Payments via Razorpay/PhonePe.`}
         />
         <meta property="og:url" content={url} />
         <meta name="twitter:title" content={`${appName} Terms of Use`} />
@@ -239,15 +239,22 @@ const WellnessTerms = ({ appName, slug }: Props) => {
 
         {/* 6. Subscriptions */}
         <Section icon={CreditCard} title="6. Subscriptions" index={6}>
-          <p>{appName} offers auto-renewable subscriptions through Google Play.</p>
+          <p>
+            {appName} offers paid subscriptions. Payments are processed through third-party payment
+            gateways (Razorpay and/or PhonePe).
+          </p>
           <ul className="space-y-2">
             <Bullet>Available plans may include a <strong className="text-[hsl(0,0%,12%)]">weekly subscription</strong> and an <strong className="text-[hsl(0,0%,12%)]">annual subscription</strong>.</Bullet>
             <Bullet>The annual subscription may include a <strong className="text-[hsl(0,0%,12%)]">free trial</strong> where offered.</Bullet>
-            <Bullet>Payment is charged to your Google account at confirmation of purchase.</Bullet>
-            <Bullet>Subscription renews automatically unless cancelled at least <strong className="text-[hsl(0,0%,12%)]">24 hours before the end</strong> of the current billing period.</Bullet>
-            <Bullet>You can manage or cancel your subscription in your Google Play account settings after purchase.</Bullet>
-            <Bullet>Refunds are handled by Google according to Google Play&rsquo;s refund policies.</Bullet>
+            <Bullet>Payment is processed via Razorpay/PhonePe at the time of purchase.</Bullet>
+            <Bullet>Where you authorize auto-debit, the subscription renews automatically unless cancelled before the next billing date.</Bullet>
+            <Bullet>You can manage or cancel your subscription in the App&rsquo;s account settings.</Bullet>
+            <Bullet>Refunds are handled in accordance with our refund policy and the applicable payment gateway&rsquo;s terms.</Bullet>
           </ul>
+          <p className="text-sm italic text-[hsl(0,0%,45%)]">
+            Payment instrument details (such as card or UPI credentials) are handled by the payment
+            gateway; we do not store them.
+          </p>
         </Section>
 
         {/* 7. Termination */}
@@ -271,9 +278,7 @@ const WellnessTerms = ({ appName, slug }: Props) => {
         {/* 9. Governing Law */}
         <Section icon={Globe} title="9. Governing Law" index={9}>
           <p>
-            These Terms are governed by and construed in accordance with the laws of India. The
-            courts of Mumbai, Maharashtra shall have exclusive jurisdiction over any disputes
-            arising out of or relating to these Terms or the App.
+            These Terms are governed by and construed in accordance with the laws of India.
           </p>
         </Section>
 
