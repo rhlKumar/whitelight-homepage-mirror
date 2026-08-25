@@ -9,6 +9,7 @@ import Terms from "./pages/Terms";
 import PulseCheckPrivacy from "./pages/PulseCheckPrivacy";
 import PulseCheckTerms from "./pages/PulseCheckTerms";
 import WellnessPrivacy from "./pages/WellnessPrivacy";
+import WellnessTerms from "./pages/WellnessTerms";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -27,6 +28,11 @@ const App = () => (
         <Route path="/pashudost/privacy" element={<WellnessPrivacy appName="Pashudost" slug="pashudost" />} />
         <Route path="/maya/privacy" element={<WellnessPrivacy appName="Parvarish Coach" slug="maya" />} />
         <Route path="/sukoon/privacy" element={<WellnessPrivacy appName="Intimacy Coach" slug="sukoon" />} />
+        <Route path="/loveguru/terms" element={<WellnessTerms appName="Loveguru" slug="loveguru" />} />
+        <Route path="/bizguru/terms" element={<WellnessTerms appName="Business Guru" slug="bizguru" />} />
+        <Route path="/pashudost/terms" element={<WellnessTerms appName="Pashudost" slug="pashudost" />} />
+        <Route path="/maya/terms" element={<WellnessTerms appName="Parvarish Coach" slug="maya" />} />
+        <Route path="/sukoon/terms" element={<WellnessTerms appName="Intimacy Coach" slug="sukoon" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
