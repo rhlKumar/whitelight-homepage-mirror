@@ -23,12 +23,12 @@ const App = () => (
         <Route path="/terms" element={<Terms />} />
         <Route path="/pulsecheck/privacy" element={<PulseCheckPrivacy />} />
         <Route path="/pulsecheck/terms" element={<PulseCheckTerms />} />
-        <Route path="/loveguru/privacy" element={<WellnessPrivacy appName="Loveguru" slug="loveguru" />} />
+        <Route path="/rajloveguru/privacy" element={<WellnessPrivacy appName="Loveguru" slug="rajloveguru" />} />
         <Route path="/bizguru/privacy" element={<WellnessPrivacy appName="Business Guru" slug="bizguru" />} />
         <Route path="/pashudost/privacy" element={<WellnessPrivacy appName="Pashudost" slug="pashudost" />} />
         <Route path="/maya/privacy" element={<WellnessPrivacy appName="Parvarish Coach" slug="maya" />} />
         <Route path="/sukoon/privacy" element={<WellnessPrivacy appName="Intimacy Coach" slug="sukoon" />} />
-        <Route path="/loveguru/terms" element={<WellnessTerms appName="Loveguru" slug="loveguru" />} />
+        <Route path="/rajloveguru/terms" element={<WellnessTerms appName="Loveguru" slug="rajloveguru" />} />
         <Route path="/bizguru/terms" element={<WellnessTerms appName="Business Guru" slug="bizguru" />} />
         <Route path="/pashudost/terms" element={<WellnessTerms appName="Pashudost" slug="pashudost" />} />
         <Route path="/maya/terms" element={<WellnessTerms appName="Parvarish Coach" slug="maya" />} />
