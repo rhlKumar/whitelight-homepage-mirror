@@ -37,6 +37,19 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Create static route pages (return HTTP 200 for app-store review)
+        run: |
+          for route in \
+            rajloveguru/privacy rajloveguru/terms \
+            bizguru/privacy bizguru/terms \
+            pashudost/privacy pashudost/terms \
+            maya/privacy maya/terms \
+            sukoon/privacy sukoon/terms \
+            pulsecheck/privacy pulsecheck/terms \
+            policy terms; do
+            mkdir -p "dist/$route"
+            cp dist/index.html "dist/$route/index.html"
+          done
       - name: Create 404 page for SPA routing
         run: cp dist/index.html dist/404.html
       - name: Setup Pages
